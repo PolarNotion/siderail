@@ -47,6 +47,7 @@ gem 'material_icons'
 gem 'devise'
 gem 'faker', git: 'https://github.com/stympy/faker.git', branch: 'master'
 gem 'kaminari'
+gem 'paper_trail'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
