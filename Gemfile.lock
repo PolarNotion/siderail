@@ -80,6 +80,10 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+    dotenv (2.7.1)
+    dotenv-rails (2.7.1)
+      dotenv (= 2.7.1)
+      railties (>= 3.2, < 6.1)
     erubi (1.8.0)
     erubis (2.7.0)
     execjs (2.7.0)
@@ -255,6 +259,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   devise
+  dotenv-rails
   faker!
   friendly_id (~> 5.2.4)
   haml-rails (~> 2.0)
