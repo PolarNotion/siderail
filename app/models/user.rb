@@ -6,4 +6,7 @@ class User < ApplicationRecord
   has_paper_trail
 
   has_one_attached :profile_photo
+
+  validates :first_name, presence: true
+  validates :last_name,  presence: true 
 end
