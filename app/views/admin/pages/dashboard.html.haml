@@ -4,7 +4,7 @@
   - @impressions.each do |impression|
     .media
       .img-wrapper.img-sm
-        %img.mr-3{ alt: "Generic placeholder image", src: "#{image_url('default-profile-photo.png')}" }/
+        %img.mr-3{ alt: "Generic placeholder image", src: "#{url_for(current_user.profile_photo)}" }/
       .media-body
         %h5.mt-0
           = impression.user ? impression.user.email : 'Visitor'

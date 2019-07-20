@@ -18,7 +18,7 @@
           %a#navbarDropdownMenuLink.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", href: "#"}
             = current_user.email
           .dropdown-menu.dropdown-menu-right{"aria-labelledby" => "navbarDropdownMenuLink"}
-            = link_to 'Admin Dashboard', admin_users_path, class: 'dropdown-item'
+            = link_to 'Admin Dashboard', dashboard_admin_pages_path, class: 'dropdown-item'
 
             - if user_signed_in?
               = link_to 'Edit profile', edit_user_registration_path, class: 'dropdown-item'

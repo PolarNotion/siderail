@@ -1,18 +1,25 @@
-%h2
-  Edit #{resource_name.to_s.humanize}
-= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-  = f.error_notification
-  .form-inputs
-    = f.input :email, required: true, autofocus: true
-    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-      %p
-        Currently waiting confirmation for: #{resource.unconfirmed_email}
-    = f.input :password, hint: "leave it blank if you don't want to change it", required: false, input_html: { autocomplete: "new-password" }
-    = f.input :password_confirmation, required: false, input_html: { autocomplete: "new-password" }
-    = f.input :current_password, hint: "we need your current password to confirm your changes", required: true, input_html: { autocomplete: "current-password" }
-  .form-actions
-    = f.button :submit, "Update"
-%h3 Cancel my account
-%p
-  Unhappy? #{link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-= link_to "Back", :back
+.container.container-md
+  %h1
+    Edit #{resource_name.to_s.humanize}
+  = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+    = f.error_notification
+    .form-inputs
+      .form-group
+        = f.input :email, required: true, autofocus: true, input_html: { class: 'form-control' }
+      .form-group
+        = f.input :profile_photo, input_html: { class: 'form-control' }
+      .form-group
+        = f.input :password, hint: "leave it blank if you don't want to change it", required: false, input_html: { autocomplete: "new-password", class: 'form-control' }
+      .form-group
+        = f.input :password_confirmation, required: false, input_html: { autocomplete: "new-password", class: 'form-control' }
+      .form-group
+        = f.input :current_password, hint: "we need your current password to confirm your changes", required: true, input_html: { autocomplete: "current-password", class: 'form-control' }
+    .form-actions
+      = f.button :submit, "Update", class: 'btn btn-primary'
+
+  %hr
+  
+  %h3 Cancel my account
+  %p
+    Unhappy? #{link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
+  = link_to "Back", :back
