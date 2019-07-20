@@ -6,7 +6,7 @@
 = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
 = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
-- @meta_site_title = "Siderail"
+- @meta_site_title = Setting.site_title
 
 = display_meta_tags site: @meta_site_title, title: @meta_page_title, description: @meta_page_description, og: { site: @meta_site_title, title: @meta_page_title, description: @meta_page_description, keywords: @meta_page_keywords, type: @meta_page_image_type, url: request.original_url, prev: "#{request.referer}", image: @meta_page_image_url }, twitter: { card: "photo", site: @meta_site_title, image: { _: @meta_page_image_url, width:  450, height: 300 } }
 

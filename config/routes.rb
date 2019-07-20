@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
   namespace :admin do
+    resources :settings,
+              only: [ :index, :create ]
+    
     resources :users, only: [ :index ]
   end
 
