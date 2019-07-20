@@ -12,7 +12,7 @@
         %td
           = user.email
         %td
-          = user.created_at
+          = format_date(user.created_at)
           .small.text-muted= "#{distance_of_time_in_words(user.created_at, Time.now)} ago"
         %td.text-right
           = user.versions.count
