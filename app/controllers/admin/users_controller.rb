@@ -1,4 +1,6 @@
 class Admin::UsersController < ApplicationController
+  layout 'admin'
+  
   def index
     @users = User.order(:created_at)
     @users = @users.page params[:page]

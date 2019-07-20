@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    = render 'layouts/head'
+
+  %body#admin
+    = render 'layouts/alerts'
+    = render 'layouts/navigation'
+
+    #navigation.navdrawer.navdrawer-permanent.navdrawer-permanent-clipped{"aria-hidden" => "true", :tabindex => "-1"}
+      .navdrawer-content
+        %ul.navdrawer-nav
+          %li.nav-item
+            = link_to admin_users_path, class: 'nav-link' do
+              %i.material-icons.mr-3 person
+              Users
+
+    #main
+      = yield

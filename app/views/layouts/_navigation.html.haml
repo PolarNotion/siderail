@@ -1,0 +1,21 @@
+%nav.navbar.navbar-expand-lg.navbar-light.bg-light.fixed-top
+  %a.navbar-brand{ href: "#" }= @meta_site_title
+  %button.navbar-toggler{"aria-controls" => "primary_nav_dropdown", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#primary_nav_dropdown", "data-toggle" => "collapse", type: "button"}
+    %span.navbar-toggler-icon
+  #primary_nav_dropdown.collapse.navbar-collapse
+    %ul.navbar-nav.ml-auto
+      %li.nav-item
+        = link_to 'Home', root_url, class: 'nav-link'
+      %li.nav-item.dropdown
+        %a#navbarDropdownMenuLink.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", href: "#"}
+          = current_user.email
+        .dropdown-menu.dropdown-menu-right{"aria-labelledby" => "navbarDropdownMenuLink"}
+          = link_to 'Admin Dashboard', admin_users_path, class: 'dropdown-item'
+
+          - if user_signed_in?
+            = link_to 'Edit profile', edit_user_registration_path, class: 'dropdown-item'
+            = link_to "Logout", destroy_user_session_path, method: :delete, class: 'dropdown-item'
+          - else
+            = link_to "Sign up", new_user_registration_path
+            = link_to "Login", new_user_session_path
+
