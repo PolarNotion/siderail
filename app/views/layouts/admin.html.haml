@@ -11,6 +11,9 @@
       .navdrawer-content
         %ul.navdrawer-nav
           %li.nav-item
+            = link_to dashboard_admin_pages_path, class: 'nav-link' do
+              %i.material-icons.mr-3 dashboard
+              Dashboard
             = link_to admin_users_path, class: 'nav-link' do
               %i.material-icons.mr-3 person
               Users

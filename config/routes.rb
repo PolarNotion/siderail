@@ -3,6 +3,15 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :settings,
               only: [ :index, :create ]
+
+    resources :pages,
+              path: '/',
+              only: [] do
+
+      collection do
+        get :dashboard
+      end
+    end
     
     resources :users, only: [ :index ]
   end

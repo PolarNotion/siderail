@@ -1,0 +1,14 @@
+%h1 Dashboard
+
+.activity-feed
+  - @impressions.each do |impression|
+    .media
+      .img-wrapper.img-sm
+        %img.mr-3{ alt: "Generic placeholder image", src: "#{image_url('default-profile-photo.png')}" }/
+      .media-body
+        %h5.mt-0
+          = impression.user ? impression.user.email : 'Visitor'
+          = impression.name
+          = impression.properties['controller']
+          = impression.properties['action']
+        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.

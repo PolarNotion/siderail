@@ -2,6 +2,7 @@ class Admin::SettingsController < ApplicationController
   layout 'admin'
 
   def index
+    _track_action()
   end
 
   def create
@@ -9,6 +10,9 @@ class Admin::SettingsController < ApplicationController
       next if key.to_s == "site_logo"
       Setting.send("#{key}=", setting_params[key].strip) unless setting_params[key].nil?
     end
+
+    _track_action('updated')
+
     redirect_to admin_settings_path(notice: "Setting was successfully updated.")
   end
 

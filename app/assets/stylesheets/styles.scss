@@ -1,5 +1,9 @@
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 
+img {
+  max-width: 100%;
+}
+
 #main {
   margin-top: 5rem;
 }
@@ -14,4 +18,28 @@
 
 .container-lg {
   max-width: 40rem;
+}
+
+.img-sm {
+  max-width: 5rem;
+}
+
+.img-md {
+  max-width: 10rem;
+}
+
+.img-lg {
+  max-width: 15rem;
+}
+
+.activity-feed {
+  .img-wrapper {
+    margin-right: 1rem;
+  }
+
+  .media {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ccc;
+  }
 }

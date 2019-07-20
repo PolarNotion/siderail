@@ -52,6 +52,16 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
+    ahoy_matey (2.2.0)
+      addressable
+      browser (~> 2.0)
+      device_detector
+      geocoder (>= 1.4.5)
+      railties (>= 4.2)
+      referer-parser (>= 0.3)
+      request_store
+      safely_block (>= 0.2.1)
+      user_agent_parser
     arel (9.0.0)
     autoprefixer-rails (9.6.1)
       execjs
@@ -63,6 +73,7 @@ GEM
       autoprefixer-rails (>= 6.0.3)
       popper_js (>= 1.12.9, < 2)
       sass (>= 3.5.2)
+    browser (2.5.3)
     builder (3.2.3)
     byebug (11.0.1)
     coffee-rails (4.2.2)
@@ -74,6 +85,7 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
     crass (1.0.4)
+    device_detector (1.0.1)
     devise (4.6.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -84,12 +96,14 @@ GEM
     dotenv-rails (2.7.1)
       dotenv (= 2.7.1)
       railties (>= 3.2, < 6.1)
+    errbase (0.1.1)
     erubi (1.8.0)
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.11.1)
     friendly_id (5.2.5)
       activerecord (>= 4.0.0)
+    geocoder (1.5.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     haml (5.1.1)
@@ -199,6 +213,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
+    referer-parser (0.3.0)
     request_store (1.4.1)
       rack (>= 1.4)
     responders (3.0.0)
@@ -207,6 +222,8 @@ GEM
     ruby_dep (1.5.0)
     ruby_parser (3.13.1)
       sexp_processor (~> 4.9)
+    safely_block (0.2.1)
+      errbase
     sass (3.7.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -244,6 +261,7 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.1.20)
       execjs (>= 0.3.0, < 3)
+    user_agent_parser (2.5.1)
     warden (1.2.8)
       rack (>= 2.0.6)
     web-console (3.7.0)
@@ -259,6 +277,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ahoy_matey
   bootsnap (>= 1.1.0)
   bootstrap (= 4.1.1)
   byebug
