@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+# :nocov:
 class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
 
@@ -25,3 +25,4 @@ class Users::SessionsController < Devise::SessionsController
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
 end
+# :nocov:

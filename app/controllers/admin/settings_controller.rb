@@ -13,7 +13,7 @@ class Admin::SettingsController < ApplicationController
 
     _track_action('updated')
 
-    redirect_to admin_settings_path(notice: "Setting was successfully updated.")
+    redirect_to admin_settings_path, notice: "Setting was successfully updated."
   end
 
   private

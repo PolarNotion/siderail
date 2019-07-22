@@ -1,3 +1,4 @@
+# :nocov:
 class Ahoy::Event < ApplicationRecord
   include Ahoy::QueryMethods
 
@@ -6,3 +7,4 @@ class Ahoy::Event < ApplicationRecord
   belongs_to :visit
   belongs_to :user, optional: true
 end
+# :nocov:
