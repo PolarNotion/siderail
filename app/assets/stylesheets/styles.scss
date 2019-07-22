@@ -12,6 +12,7 @@ img {
 
 #main {
   margin-top: 5rem;
+  min-height: 90vh;
 }
 
 .container-sm {
@@ -24,6 +25,10 @@ img {
 
 .container-lg {
   max-width: 40rem;
+}
+
+.text-italic {
+  font-style: italic;
 }
 
 .img-sm {
