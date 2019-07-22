@@ -45,10 +45,25 @@
       ],
       "/Users/morganjlopes/code/polarnotion/siderail/app/controllers/admin/pages_controller.rb": [
         1,
-        1,
         null,
         1,
         1,
+        null,
+        null
+      ],
+      "/Users/morganjlopes/code/polarnotion/siderail/app/controllers/admin/admin_base_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        4,
+        0,
+        null,
         null,
         null
       ],
@@ -65,7 +80,6 @@
         null
       ],
       "/Users/morganjlopes/code/polarnotion/siderail/app/controllers/admin/settings_controller.rb": [
-        1,
         1,
         null,
         1,
@@ -93,7 +107,6 @@
         null
       ],
       "/Users/morganjlopes/code/polarnotion/siderail/app/controllers/admin/users_controller.rb": [
-        1,
         1,
         null,
         1,
@@ -407,6 +420,6 @@
         0
       ]
     },
-    "timestamp": 1563759129
+    "timestamp": 1563787373
   }
 }

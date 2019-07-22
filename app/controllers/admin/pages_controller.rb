@@ -1,5 +1,4 @@
-class Admin::PagesController < ApplicationController
-  layout 'admin'
+class Admin::PagesController < Admin::AdminBaseController
 
   def dashboard
     @impressions = Ahoy::Event.order(time: :desc)

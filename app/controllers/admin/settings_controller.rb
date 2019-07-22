@@ -1,5 +1,4 @@
-class Admin::SettingsController < ApplicationController
-  layout 'admin'
+class Admin::SettingsController < Admin::AdminBaseController
 
   def index
     _track_action()

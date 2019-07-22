@@ -43,7 +43,7 @@ gem 'jquery-rails'
 gem 'bootstrap',     '>= 4.3.1'
 gem 'material-sass', '4.1.1'
 gem 'material_icons'
-gem 'devise'
+gem 'devise', github: 'plataformatec/devise', branch: 'master'
 gem 'faker', git: 'https://github.com/stympy/faker.git', branch: 'master'
 gem 'kaminari'
 gem 'paper_trail'
@@ -61,6 +61,8 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'database_cleaner'
   gem 'capybara'
+  gem 'rails-controller-testing', require: false
+  gem 'webmock'
 end
 
 group :test do

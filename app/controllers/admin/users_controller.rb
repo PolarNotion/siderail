@@ -1,5 +1,4 @@
-class Admin::UsersController < ApplicationController
-  layout 'admin'
+class Admin::UsersController < Admin::AdminBaseController
   
   def index
     @users = User.order(:created_at)
