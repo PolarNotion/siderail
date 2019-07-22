@@ -1,8 +1,9 @@
 class Admin::UsersController < Admin::AdminBaseController
   
   def index
-    @users = User.order(:created_at)
-    @users = @users.page params[:page]
+    @page_title  = 'Users'
+    @users       = User.order(:created_at).contains(params[:q])
+    @users       = @users.page params[:page]
 
     _track_action()
 

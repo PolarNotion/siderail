@@ -1,8 +1,18 @@
-@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import "variables.scss";
 
 #admin {
+  header {
+    border-bottom: 1px solid #eee;
+    padding: 1.5rem 1rem;
+
+    h1, .h1 {
+      font-size: 2rem;
+      margin-bottom: 0px;
+    }
+  }
+
   #main {
-    margin-top: 5rem;
-    margin-left: 19rem;
+    margin-top: 3.5rem;
+    margin-left: 17.5rem;
   }
 }

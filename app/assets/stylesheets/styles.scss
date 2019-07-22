@@ -15,6 +15,10 @@ img {
   min-height: 90vh;
 }
 
+.pad {
+  padding: 1rem;
+}
+
 .container-sm {
   max-width: 20rem;
 }
@@ -62,6 +66,12 @@ a:not(.btn) {
     background-color: $color_primary_dark;
     border-color: $color_primary_dark;
   }
+}
+
+.navdrawer-nav,
+.dropdown-menu {
+  margin: 0px;
+  padding: 0px;
 }
 
 .activity-feed {

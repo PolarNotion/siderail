@@ -22,4 +22,12 @@
               Settings
 
     #main
-      = yield
+      %header
+        .row
+          .col-sm-6
+            %h1= @page_title
+          .col-sm-6
+            = yield(:page_actions)
+
+      %section.pad
+        = yield

@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   has_one_attached :profile_photo
 
+  scope :contains, -> (q) { where("first_name ilike ? OR last_name ilike ? OR email ilike ?", "%#{q}%", "%#{q}%", "%#{q}%")}
+
   validates :first_name, presence: true
   validates :last_name,  presence: true 
 end

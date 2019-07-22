@@ -1,6 +1,7 @@
 class Admin::SettingsController < Admin::AdminBaseController
 
   def index
+    @page_title  = 'Settings'
     _track_action()
   end
 
