@@ -1,4 +1,10 @@
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import "variables.scss";
+
+* {
+  -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
 img {
   max-width: 100%;
@@ -32,6 +38,27 @@ img {
   max-width: 15rem;
 }
 
+a:not(.btn) {
+  cursor: pointer;
+  color: $color_primary;
+  text-decoration: none;
+}
+
+.btn.btn-primary,
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+  background-color: $color_primary;
+  border-color: $color_primary;
+  color: white;
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $color_primary_dark;
+    border-color: $color_primary_dark;
+  }
+}
+
 .activity-feed {
   .img-wrapper {
     margin-right: 1rem;
@@ -42,4 +69,14 @@ img {
     margin-bottom: 1rem;
     border-bottom: 1px solid #ccc;
   }
+}
+
+/* For tablets: */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* For desktop: */
+@media only screen and (min-width: 768px) {
+
 }
