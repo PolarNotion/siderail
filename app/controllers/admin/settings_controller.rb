@@ -2,7 +2,10 @@ class Admin::SettingsController < Admin::AdminBaseController
 
   def index
     @page_title  = 'Settings'
+    
     _track_action()
+
+    breadcrumb 'Settings', :admin_settings_path
   end
 
   def create

@@ -51,6 +51,7 @@ gem 'meta-tags'
 gem 'rails-settings-cached', '~> 2.0'
 gem 'ahoy_matey'
 gem 'aws-sdk-s3', require: false
+gem 'loaf'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

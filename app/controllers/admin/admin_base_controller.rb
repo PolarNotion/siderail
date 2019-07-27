@@ -1,6 +1,7 @@
 class Admin::AdminBaseController < ApplicationController
   before_action :authenticate_user!
   before_action :_ensure_user_is_admin
+  breadcrumb 'Admin', :dashboard_admin_pages_path
 
   layout 'admin'
 
