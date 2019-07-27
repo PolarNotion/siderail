@@ -1,12 +1,4 @@
-= form_tag url_for(), class: '', method: :get do |f|
-  .form-group.input-group
-    .input-group-prepend
-      %span#basic-addon1.input-group-text
-        %i.material-icons search
-    %input.form-control{id: 'q', name: 'q', type: 'text', placeholder: 'search', value: params[:q]}
-    .input-group-append
-      = submit_tag 'Search', class: 'btn btn-light'
-
+= render 'shared/search/form'
 
 %table.table
   %thead

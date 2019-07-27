@@ -14,9 +14,15 @@
             = link_to dashboard_admin_pages_path, class: 'nav-link' do
               %i.material-icons.mr-3 dashboard
               Dashboard
+            = link_to entries_admin_pages_path, class: 'nav-link' do
+              %i.material-icons.mr-3 view_list
+              Entries
             = link_to admin_users_path, class: 'nav-link' do
               %i.material-icons.mr-3 person
               Users
+            = link_to utilities_admin_pages_path, class: 'nav-link' do
+              %i.material-icons.mr-3 build
+              Utilities
             = link_to admin_settings_path, class: 'nav-link' do
               %i.material-icons.mr-3 settings
               Settings
