@@ -59,6 +59,7 @@ group :development, :test do
   gem 'letter_opener'
   gem 'dotenv-rails'
   gem 'rspec-rails', '~> 3.8'
+  gem 'guard-rspec', require: false
   gem 'factory_bot_rails'
   gem 'database_cleaner'
   gem 'capybara'
