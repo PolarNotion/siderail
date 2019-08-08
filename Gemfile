@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.1'
+ruby '2.6.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
@@ -43,8 +43,8 @@ gem 'jquery-rails'
 gem 'bootstrap',     '>= 4.3.1'
 gem 'material-sass', '4.1.1'
 gem 'material_icons'
-gem 'devise', github: 'plataformatec/devise', branch: 'master'
-gem 'faker', git: 'https://github.com/stympy/faker.git', branch: 'master'
+gem 'devise', '4.6.2'
+gem 'faker', '2.0'
 gem 'kaminari'
 gem 'paper_trail'
 gem 'meta-tags'
@@ -59,6 +59,7 @@ group :development, :test do
   gem 'letter_opener'
   gem 'dotenv-rails'
   gem 'rspec-rails', '~> 3.8'
+  gem 'guard-rspec', require: false
   gem 'factory_bot_rails'
   gem 'database_cleaner'
   gem 'capybara'

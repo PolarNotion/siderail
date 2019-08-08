@@ -17,11 +17,18 @@
 /storage/*
 !/storage/.keep
 
+# Ignore JavaScript package manager stuff
 /node_modules
 /yarn-error.log
 
+# Ignore compiled assets: they get built on deploy
 /public/assets
+
+# Ignore debugger noise
 .byebug_history
+
+# Ignore test coverage reports
+/coverage
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
