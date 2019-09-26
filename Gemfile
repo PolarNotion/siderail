@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+gem "nokogiri", ">= 1.10.4"
 gem 'haml-rails', '~> 2.0'
 gem 'simple_form'
 gem 'friendly_id', '~> 5.2.4'
@@ -43,7 +44,7 @@ gem 'jquery-rails'
 gem 'bootstrap',     '>= 4.3.1'
 gem 'material-sass', '4.1.1'
 gem 'material_icons'
-gem 'devise', github: 'plataformatec/devise', branch: 'master'
+gem 'devise', ">= 4.7.1"
 gem 'faker', git: 'https://github.com/stympy/faker.git', branch: 'master'
 gem 'kaminari'
 gem 'paper_trail'
