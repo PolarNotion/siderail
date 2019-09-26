@@ -44,7 +44,7 @@ gem 'jquery-rails'
 gem 'bootstrap',     '>= 4.3.1'
 gem 'material-sass', '4.1.1'
 gem 'material_icons'
-gem 'devise', '4.6.2'
+gem 'devise', ">= 4.7.1"
 gem 'faker', '2.0'
 gem 'kaminari'
 gem 'paper_trail'
