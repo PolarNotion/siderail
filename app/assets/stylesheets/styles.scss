@@ -95,6 +95,15 @@ a:not(.btn) {
   }
 }
 
+.error,
+.error_notification{
+  background-color: red;
+  padding: 10px;
+  display: block;
+  color: white;
+  border-radius: 3px;
+}
+
 /* For tablets: */
 @media only screen and (min-width: 600px) {
 
