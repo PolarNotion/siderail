@@ -2,27 +2,21 @@
 
 > _Get started on the right track_
 
-Siderail provides:
+Siderail is an application generator that provides:
 
-- a pile of must-have gems
+- a pile of must-have gems that represent the way we work
+- specifications set up using RSpec
 - admin stuff: roles, routes, controllers, interface
 - event/pageview tracking
-- rspec-based testing already set up
 - a standard for our projects to share
+- a [Rails Application Generator](https://guides.rubyonrails.org/rails_application_templates.html) that is easy to keep updated
 - always growing and improving with real world usage
 
 ## Start Here
 
 Starting a new project? Start with Siderail!
 
-1. Clone this repo: `git clone https://github.com/PolarNotion/siderail.git my-new-project`
-2. Bundle install: `cd my-new-project` and `bundle install`
-3. Set up the databases: `rails db:setup`
-4. Run the build-in tests: `rails spec`
-5. Overwrite and commit this README with relevant project info (or nothing)
-6. Create a new GitHub repo in the Polar Notion organization
-7. Set this repo as origin in the cloned Siderail: `git remote set-url origin https://github.com/PolarNotion/my-new-project.git`
-8. Push it! `git push`
+TODO
 
 ## Troubleshooting
 
@@ -68,6 +62,12 @@ gem install pg -v '1.1.4' --source 'https://rubygems.org/' -- --with-pg_config='
 ```
 
 Success? Now go back and run `bundle install`, when it gets to the `pg` gem it will know what to do.
+
+### Yarn
+
+Ya gonna need it in Rails 6 land!
+
+https://yarnpkg.com/lang/en/docs/install/
 
 ### Homebrew
 
