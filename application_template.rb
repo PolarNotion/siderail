@@ -41,21 +41,21 @@ rescue Errno::ENOENT => e
     message = e.message
   end
 
-  puts message.red
+  puts red(message)
   exit 1
 end
 
 def assert_minimum_version(required_version, current_version, lib_name)
-  print "Checking #{lib_name} version is #{required_version}... ".yellow
+  print yellow("Checking #{lib_name} version is #{required_version}... ")
   # using Gem to compare version strings, even if the target isn't a gem
   requirement = Gem::Requirement.new(required_version)
   actual_version = Gem::Version.new(current_version)
 
   if requirement.satisfied_by?(actual_version)
-    puts "✓".green
+    puts green("✓")
     return
   else
-    puts "FAIL".red
+    puts red("FAIL")
   end
 
   exit 1 if no?(%Q(
@@ -98,7 +98,7 @@ end
 # In that case, use `git clone` to download them to a local temporary dir.
 def add_template_repository_to_source_path
   if __FILE__ =~ %r{\Ahttps?://} # Was a URL specified?
-    print "Cloning Siderail... ".yellow
+    print yellow("Cloning Siderail... ")
 
     require "fileutils"
     require "shellwords"
@@ -121,30 +121,16 @@ def add_template_repository_to_source_path
       Dir.chdir(tempdir) { git checkout: branch }
     end
   else # Local file specified? Add its directory to source paths
-    print "Using local directory... ".yellow
+    print yellow("Using local directory... ")
     source_paths.unshift(File.dirname(__FILE__))
   end
-  puts "✓".green
+  puts green("✓")
 end
 
-# Extend string with some Terminal color helpers
-class String
-  def red;        "\e[31m#{self}\e[0m" end
-  def green;      "\e[32m#{self}\e[0m" end
-  def yellow;     "\e[33m#{self}\e[0m" end
-  def blue;       "\e[34m#{self}\e[0m" end
-  def magenta;    "\e[35m#{self}\e[0m" end
-
-  def bg_red;     "\e[41m#{self}\e[0m" end
-  def bg_green;   "\e[42m#{self}\e[0m" end
-  def bg_blue;    "\e[44m#{self}\e[0m" end
-  def bg_magenta; "\e[45m#{self}\e[0m" end
-  def bg_cyan;    "\e[46m#{self}\e[0m" end
-  def bg_gray;    "\e[47m#{self}\e[0m" end
-
-  def bold;       "\e[1m#{self}\e[22m" end
-  def italic;     "\e[3m#{self}\e[23m" end
-  def underline;  "\e[4m#{self}\e[24m" end
-end
+# Terminal color helpers
+def colorize(str, clr_num); "\e[#{clr_num}m#{str}\e[0m"; end
+def red(str); colorize(str, 31); end
+def green(str); colorize(str, 32); end
+def yellow(str); colorize(str, 33); end
 
 apply_template!
