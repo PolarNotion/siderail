@@ -1,3 +1,5 @@
+# This is strongly inspired by (and much code was lifted from) the incredible:
+# https://github.com/mattbrictson/rails-template
 require "bundler"
 
 def assert_ruby_version(required_ruby_version)
