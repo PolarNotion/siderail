@@ -73,6 +73,41 @@ def assert_postgres
   POSTGRES
 end
 
+# Add this template directory to source_paths so that Thor actions like
+# copy_file and template resolve against our source files. If this file was
+# invoked remotely via HTTP, that means the files are not present locally.
+# In that case, use `git clone` to download them to a local temporary dir.
+def add_template_repository_to_source_path
+  if __FILE__ =~ %r{\Ahttps?://} # Was a URL specified?
+    print "Cloning Siderail... ".yellow
+
+    require "fileutils"
+    require "shellwords"
+    require "tmpdir"
+
+    # Make a temp directory and add it to the source paths
+    source_paths.unshift(tempdir = Dir.mktmpdir("siderail-"))
+    # Delete the temp dir when we're done
+    at_exit { FileUtils.remove_entry(tempdir) }
+    # Clone the template repo into the temp directory
+    git clone: [
+      "--quiet",
+      "https://github.com/PolarNotion/siderail.git",
+      tempdir
+    ].map(&:shellescape).join(" ")
+
+    # If there's a branch name in the given template file...
+    if (branch = __FILE__[%r{rails-template/(.+)/template.rb}, 1])
+      # check out that branch
+      Dir.chdir(tempdir) { git checkout: branch }
+    end
+  else # Local file specified? Add its directory to source paths
+    print "Using local directory... ".yellow
+    source_paths.unshift(File.dirname(__FILE__))
+  end
+  puts "✓".green
+end
+
 # Extend string with some Terminal color helpers
 class String
   def red;        "\e[31m#{self}\e[0m" end
