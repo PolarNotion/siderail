@@ -13,6 +13,15 @@ end
 def assert_yarn_version(required_yarn_version)
   current_yarn_version = `yarn -v`.strip
   assert_minimum_version(required_yarn_version, current_yarn_version, "Yarn")
+rescue Errno::ENOENT => e
+  message = if e.message.include?("No such file or directory - yarn")
+    "Yarn is not installed! Visit: https://yarnpkg.com/lang/en/docs/install/"
+  else
+    message = e.message
+  end
+
+  puts message.red
+  exit 1
 end
 
 def assert_minimum_version(required_version, current_version, lib_name)
