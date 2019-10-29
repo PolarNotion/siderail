@@ -25,11 +25,17 @@ rescue Errno::ENOENT => e
 end
 
 def assert_minimum_version(required_version, current_version, lib_name)
+  print "Checking #{lib_name} version is #{required_version}... ".yellow
   # using Gem to compare version strings, even if the target isn't a gem
   requirement = Gem::Requirement.new(required_version)
   actual_version = Gem::Version.new(current_version)
 
-  return if requirement.satisfied_by?(actual_version)
+  if requirement.satisfied_by?(actual_version)
+    puts "✓".green
+    return
+  else
+    puts "FAIL".red
+  end
 
   exit 1 if no?(%Q(
     This template requires #{lib_name} #{required_version}.
