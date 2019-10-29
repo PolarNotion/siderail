@@ -52,7 +52,7 @@ def assert_valid_options
     skip_gemfile: false,
     skip_bundle: false,
     skip_git: false,
-    skip_test_unit: false,
+    skip_test: false,
     edge: false
   }
   valid_options.each do |key, expected|
