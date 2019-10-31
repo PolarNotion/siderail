@@ -3,16 +3,16 @@
 require "bundler"
 
 # Constants
-RUBY_VERSION = "~> 2.6.1".freeze
-RAILS_VERSION = "~> 6.0.0".freeze
-YARN_VERSION = "~> 1.19.1".freeze
+RUBY_VERSION_REQUIREMENT = "~> 2.6.1".freeze
+RAILS_VERSION_REQUIREMENT = "~> 6.0.0".freeze
+YARN_VERSION_REQUIREMENT = "~> 1.19.1".freeze
 
 # Main template
 def apply_template!
   # Sanity checks
-  assert_ruby_version(RUBY_VERSION)
-  assert_rails_version(RAILS_VERSION)
-  assert_yarn_version(YARN_VERSION)
+  assert_ruby_version(RUBY_VERSION_REQUIREMENT)
+  assert_rails_version(RAILS_VERSION_REQUIREMENT)
+  assert_yarn_version(YARN_VERSION_REQUIREMENT)
   assert_valid_options
   assert_postgres
 
@@ -46,7 +46,7 @@ rescue Errno::ENOENT => e
 end
 
 def assert_minimum_version(required_version, current_version, lib_name)
-  print yellow("Checking #{lib_name} version is #{required_version}... ")
+  print yellow("Checking #{lib_name} version #{current_version} satisfies #{required_version}... ")
   # using Gem to compare version strings, even if the target isn't a gem
   requirement = Gem::Requirement.new(required_version)
   actual_version = Gem::Version.new(current_version)
