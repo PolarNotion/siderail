@@ -18,6 +18,10 @@ def apply_template!
 
   # Prepare the application file templates
   add_template_repository_to_source_path
+
+  confirm_optional_libs
+
+  template "Gemfile.tt", force: true
 end
 
 # Helper methods
@@ -127,6 +131,25 @@ def add_template_repository_to_source_path
     source_paths.unshift(File.dirname(__FILE__))
   end
   puts green("✓")
+end
+
+def confirm_optional_libs
+  puts yellow("Which options should be installed?")
+  sidekiq?
+  redis?
+  image_uploads?
+end
+
+def sidekiq?
+  @sidekiq ||= yes?(yellow("Sidekiq?"))
+end
+
+def redis?
+  @redis ||= sidekiq? || yes?(yellow("Redis?"))
+end
+
+def image_uploads?
+  @image_uploads ||= yes?(yellow("Image Uploads?"))
 end
 
 # Terminal color helpers
