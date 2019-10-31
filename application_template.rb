@@ -115,8 +115,10 @@ def add_template_repository_to_source_path
       tempdir
     ].map(&:shellescape).join(" ")
 
+    puts red(__FILE__)
+
     # If there's a branch name in the given template file...
-    if (branch = __FILE__[%r{rails-template/(.+)/template.rb}, 1])
+    if (branch = __FILE__[%r{siderail/(.+)/application_template.rb}, 1])
       # check out that branch
       Dir.chdir(tempdir) { git checkout: branch }
     end
