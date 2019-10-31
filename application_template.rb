@@ -22,6 +22,10 @@ def apply_template!
   confirm_optional_libs
 
   template "Gemfile.tt", force: true
+  template "README.md.tt", force: true
+
+  copy_file "gitignore", ".gitignore", force: true
+  copy_file "ruby-version", ".ruby-version", force: true
 end
 
 # Helper methods
