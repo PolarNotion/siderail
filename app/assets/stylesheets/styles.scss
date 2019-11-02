@@ -9,12 +9,37 @@ img {
   max-width: 100%;
 }
 
+h1, .h1 {
+  font-size: calc(3em + 1vw);
+}
+
+h2, .h2 {
+  font-size: calc(2em + 1vw);
+}
+
+h3, .h3 {
+  font-size: calc(1.5em + 1vw);
+}
+
+h4, .h4 {
+  font-size: calc(1em + 1vw);
+}
+
+p, li, blockquote {
+  font-size: calc(1em + .3vw);
+  line-height: 1.75;
+}
+
 #main {
   margin-top: 5rem;
   min-height: 90vh;
 }
 
 .pad {
+  padding: 1rem;
+}
+
+.pad-section {
   padding: 1rem;
 }
 
@@ -50,6 +75,22 @@ img {
   max-width: 15rem;
 }
 
+.card {
+  margin-bottom: 2rem;
+}
+
+.card-image-content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  padding: 10px;
+  .card-header {
+    border-bottom: 0px;
+    padding-bottom: 0px;
+  }
+}
+
 a:not(.btn) {
   cursor: pointer;
   color: $color_primary;
@@ -83,6 +124,17 @@ a:not(.btn) {
   margin-bottom: 0px;
 }
 
+.background-image {
+  background-size: cover;
+  background-position: center center;
+}
+
+.border,
+.card {
+  border-radius: 5px;
+  overflow: hidden;
+}
+
 .activity-feed {
   .img-wrapper {
     margin-right: 1rem;
@@ -95,6 +147,14 @@ a:not(.btn) {
   }
 }
 
+.fixed-top {
+  z-index: 41;
+}
+
+.sticky-top {
+  top: 80px;
+}
+
 .error,
 .error_notification{
   background-color: red;
@@ -104,9 +164,25 @@ a:not(.btn) {
   border-radius: 3px;
 }
 
+.col-sm-fifth {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.col-sm-fifth {
+  min-height: 1px;
+  padding-right: 20px;
+  padding-left: 20px;
+  position: relative;
+  width: 100%;
+}
+
 /* For tablets: */
 @media only screen and (min-width: 600px) {
-
+  .col-sm-fifth {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
 }
 
 /* For desktop: */
