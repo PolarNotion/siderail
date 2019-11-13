@@ -23,6 +23,7 @@ def lets_go!
 
   template "Gemfile.tt", force: true
   template "README.md.tt", force: true
+  template "example.env.tt"
 
   copy_file "gitignore", ".gitignore", force: true
   copy_file "ruby-version", ".ruby-version", force: true
