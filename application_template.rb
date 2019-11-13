@@ -8,7 +8,7 @@ RAILS_VERSION_REQUIREMENT = "~> 6.0.0".freeze
 YARN_VERSION_REQUIREMENT = "~> 1.19.1".freeze
 
 # Main template
-def apply_template!
+def lets_go!
   # Sanity checks
   assert_ruby_version(RUBY_VERSION_REQUIREMENT)
   assert_rails_version(RAILS_VERSION_REQUIREMENT)
@@ -138,7 +138,7 @@ def add_template_repository_to_source_path
 end
 
 def confirm_optional_libs
-  puts yellow("Which options should be installed?")
+  puts yellow("Select Options:")
   sidekiq?
   redis?
   image_uploads?
@@ -162,4 +162,4 @@ def red(str); colorize(str, 31); end
 def green(str); colorize(str, 32); end
 def yellow(str); colorize(str, 33); end
 
-apply_template!
+lets_go!
