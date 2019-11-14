@@ -30,62 +30,62 @@ def lets_go!
   copy_file "ruby-version", ".ruby-version", force: true
 
   # app/ files
-  copy_file "app/assets/images/default-profile-photo.png"
-  copy_file "app/assets/images/spacer-landscape.png"
-  copy_file "app/assets/images/spacer-portrait.png"
-  copy_file "app/assets/javascripts/general.coffee"
-  copy_file "app/assets/stylesheets/admin.scss"
-  copy_file "app/assets/stylesheets/application.css"
-  copy_file "app/assets/stylesheets/styles.scss"
-  copy_file "app/assets/stylesheets/variables.scss"
-  copy_file "app/controllers/admin/admin_base_controller.rb"
-  copy_file "app/controllers/admin/pages_controller.rb"
-  copy_file "app/controllers/admin/settings_controller.rb"
-  copy_file "app/controllers/admin/users_controller.rb"
-  copy_file "app/controllers/application_controller.rb"
-  copy_file "app/controllers/pages_controller.rb"
-  copy_file "app/helpers/application_helper.rb"
-  copy_file "app/models/ahoy/event.rb"
-  copy_file "app/models/ahoy/visit.rb"
-  copy_file "app/models/setting.rb"
-  copy_file "app/models/user.rb"
-  copy_file "app/users/confirmations_controller.rb"
-  copy_file "app/users/omniauth_callbacks_controller.rb"
-  copy_file "app/users/passwords_controller.rb"
-  copy_file "app/users/registrations_controller.rb"
-  copy_file "app/users/sessions_controller.rb"
-  copy_file "app/users/unlocks_controller.rb"
-  copy_file "app/views/admin/pages/dashboard.html.haml"
-  copy_file "app/views/admin/pages/entries.html.haml"
-  copy_file "app/views/admin/pages/utilities.html.haml"
-  copy_file "app/views/admin/settings/index.html.haml"
-  copy_file "app/views/admin/users/index.html.haml"
-  copy_file "app/views/layouts/_alerts.html.haml"
-  copy_file "app/views/layouts/_breadcrumbs.html.haml"
-  copy_file "app/views/layouts/_footer.html.haml"
-  copy_file "app/views/layouts/_head.html.haml"
-  copy_file "app/views/layouts/_navigation.html.haml"
-  copy_file "app/views/layouts/admin.html.haml"
-  copy_file "app/views/layouts/application.html.haml"
-  copy_file "app/views/layouts/mailer.html.haml"
-  copy_file "app/views/layouts/mailer.text.haml"
-  copy_file "app/views/pages/home.html.haml"
-  copy_file "app/views/shared/search/_form.html.haml"
-  copy_file "app/views/users/confirmations/new.html.haml"
-  copy_file "app/views/users/mailer/confirmation_instructions.html.haml"
-  copy_file "app/views/users/mailer/email_changed.html.haml"
-  copy_file "app/views/users/mailer/password_change.html.haml"
-  copy_file "app/views/users/mailer/reset_password_instructions.html.haml"
-  copy_file "app/views/users/mailer/unlock_instructions.html.haml"
-  copy_file "app/views/users/passwords/edit.html.haml"
-  copy_file "app/views/users/passwords/new.html.haml"
-  copy_file "app/views/users/registrations/_details.html.haml"
-  copy_file "app/views/users/registrations/edit.html.haml"
-  copy_file "app/views/users/registrations/new.html.haml"
-  copy_file "app/views/users/sessions/new.html.haml"
-  copy_file "app/views/users/shared/_error_messages.html.haml"
-  copy_file "app/views/users/shared/_links.html.haml"
-  copy_file "app/views/users/unlocks/new.html.haml"
+  copy_file "app/assets/images/default-profile-photo.png", force: true
+  copy_file "app/assets/images/spacer-landscape.png", force: true
+  copy_file "app/assets/images/spacer-portrait.png", force: true
+  copy_file "app/assets/javascripts/general.coffee", force: true
+  copy_file "app/assets/stylesheets/admin.scss", force: true
+  copy_file "app/assets/stylesheets/application.css", force: true
+  copy_file "app/assets/stylesheets/styles.scss", force: true
+  copy_file "app/assets/stylesheets/variables.scss", force: true
+  copy_file "app/controllers/admin/admin_base_controller.rb", force: true
+  copy_file "app/controllers/admin/pages_controller.rb", force: true
+  copy_file "app/controllers/admin/settings_controller.rb", force: true
+  copy_file "app/controllers/admin/users_controller.rb", force: true
+  copy_file "app/controllers/application_controller.rb", force: true
+  copy_file "app/controllers/pages_controller.rb", force: true
+  copy_file "app/helpers/application_helper.rb", force: true
+  copy_file "app/models/ahoy/event.rb", force: true
+  copy_file "app/models/ahoy/visit.rb", force: true
+  copy_file "app/models/setting.rb", force: true
+  copy_file "app/models/user.rb", force: true
+  copy_file "app/users/confirmations_controller.rb", force: true
+  copy_file "app/users/omniauth_callbacks_controller.rb", force: true
+  copy_file "app/users/passwords_controller.rb", force: true
+  copy_file "app/users/registrations_controller.rb", force: true
+  copy_file "app/users/sessions_controller.rb", force: true
+  copy_file "app/users/unlocks_controller.rb", force: true
+  copy_file "app/views/admin/pages/dashboard.html.haml", force: true
+  copy_file "app/views/admin/pages/entries.html.haml", force: true
+  copy_file "app/views/admin/pages/utilities.html.haml", force: true
+  copy_file "app/views/admin/settings/index.html.haml", force: true
+  copy_file "app/views/admin/users/index.html.haml", force: true
+  copy_file "app/views/layouts/_alerts.html.haml", force: true
+  copy_file "app/views/layouts/_breadcrumbs.html.haml", force: true
+  copy_file "app/views/layouts/_footer.html.haml", force: true
+  copy_file "app/views/layouts/_head.html.haml", force: true
+  copy_file "app/views/layouts/_navigation.html.haml", force: true
+  copy_file "app/views/layouts/admin.html.haml", force: true
+  copy_file "app/views/layouts/application.html.haml", force: true
+  copy_file "app/views/layouts/mailer.html.haml", force: true
+  copy_file "app/views/layouts/mailer.text.haml", force: true
+  copy_file "app/views/pages/home.html.haml", force: true
+  copy_file "app/views/shared/search/_form.html.haml", force: true
+  copy_file "app/views/users/confirmations/new.html.haml", force: true
+  copy_file "app/views/users/mailer/confirmation_instructions.html.haml", force: true
+  copy_file "app/views/users/mailer/email_changed.html.haml", force: true
+  copy_file "app/views/users/mailer/password_change.html.haml", force: true
+  copy_file "app/views/users/mailer/reset_password_instructions.html.haml", force: true
+  copy_file "app/views/users/mailer/unlock_instructions.html.haml", force: true
+  copy_file "app/views/users/passwords/edit.html.haml", force: true
+  copy_file "app/views/users/passwords/new.html.haml", force: true
+  copy_file "app/views/users/registrations/_details.html.haml", force: true
+  copy_file "app/views/users/registrations/edit.html.haml", force: true
+  copy_file "app/views/users/registrations/new.html.haml", force: true
+  copy_file "app/views/users/sessions/new.html.haml", force: true
+  copy_file "app/views/users/shared/_error_messages.html.haml", force: true
+  copy_file "app/views/users/shared/_links.html.haml", force: true
+  copy_file "app/views/users/unlocks/new.html.haml", force: true
 
 end
 
