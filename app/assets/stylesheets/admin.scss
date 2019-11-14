@@ -1,0 +1,22 @@
+@import "variables.scss";
+
+#admin {
+  header {
+    border-bottom: 1px solid #eee;
+    padding: 1.5rem 1rem;
+
+    h1, .h1 {
+      font-size: 2rem;
+      margin-bottom: 0px;
+    }
+  }
+
+  #main {
+    margin-top: 3.5rem;
+    margin-left: 12.5rem;
+  }
+
+  .navdrawer-permanent {
+    max-width: 12.5rem;
+  }
+}

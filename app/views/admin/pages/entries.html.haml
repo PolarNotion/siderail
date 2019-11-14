@@ -1,0 +1,10 @@
+.row
+  .col-sm-2
+    %ul.nav.flex-column
+      %li.nav-item= link_to 'Examples', '#', class: 'nav-link'
+      %li.nav-item= link_to 'Vendors', '#', class: 'nav-link'
+      %li.nav-item= link_to 'Posts', '#', class: 'nav-link'
+
+  .col-sm-10
+    = render 'shared/search/form'
+

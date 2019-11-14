@@ -1,0 +1,223 @@
+%nav{"aria-label" => "breadcrumb"}
+  .container
+    %ol.breadcrumb
+      %li.breadcrumb-item
+        %a{:href => "#"} Home
+      %li.breadcrumb-item
+        %a{:href => "#"} Library
+      %li.breadcrumb-item.active{"aria-current" => "page"} Data
+
+%header.pad-section
+  .container
+    %h1 Heading 1
+    %h2 Heading 2
+    %h3 Heading 3
+    %h4 Heading 4
+
+    %label Label
+
+    %p.lead Lead paragraph text
+
+    %p Siderail is an open source project designed to increase the speed of starting new projects and increase the consistency with which apps are created.
+
+    %p
+      You can use the mark tag to
+      %mark highlight
+      text.
+    %p
+      %del This line of text is meant to be treated as deleted text.
+    %p
+      %s This line of text is meant to be treated as no longer accurate.
+    %p
+      %ins This line of text is meant to be treated as an addition to the document.
+    %p
+      %u This line of text will render as underlined
+    %p
+      %small This line of text is meant to be treated as fine print.
+    %p
+      %strong This line rendered as bold text.
+    %p
+      %em This line rendered as italicized text.
+
+    %blockquote.blockquote= Faker::Movies::Ghostbusters.quote
+
+    %button.btn.btn-primary{"data-target" => "#exampleModal", "data-toggle" => "modal", :type => "button"}
+      Launch demo modal
+
+    #exampleModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "exampleModalLabel", :role => "dialog", :tabindex => "-1"}
+      .modal-dialog{:role => "document"}
+        .modal-content
+          .modal-header
+            %h5#exampleModalLabel.modal-title Modal title
+            %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+              %span{"aria-hidden" => "true"} ×
+          .modal-body
+            \...
+          .modal-footer
+            %button.btn.btn-secondary{"data-dismiss" => "modal", :type => "button"} Close
+            %button.btn.btn-primary{:type => "button"} Save changes
+
+%section.pad-section
+  .container
+    %h2 Alerts
+    .alert.alert-primary{:role => "alert"}
+      A simple primary alert—check it out!
+    .alert.alert-secondary{:role => "alert"}
+      A simple secondary alert—check it out!
+    .alert.alert-danger{:role => "alert"}
+      A simple danger alert—check it out!
+    .alert.alert-info{:role => "alert"}
+      A simple info alert—check it out!
+    .alert.alert-success{:role => "alert"}
+      A simple success alert—check it out!
+    .alert.alert-warning{:role => "alert"}
+      A simple warning alert—check it out!
+    .alert.alert-dark{:role => "alert"}
+      A simple dark alert—check it out!
+    .alert.alert-light{:role => "alert"}
+      A simple light alert—check it out!
+
+    
+%section.pad-section
+  .container
+    %h2 Buttons
+    - [ 'link', 'primary', 'secondary', 'default', 'danger', 'warning', 'info'].each do |x|
+
+      %h3 #{x.titleize}
+      = link_to 'Small', 'https://github.com/PolarNotion/siderail', class: "btn btn-#{x} btn-sm"
+      = link_to 'Regular', 'https://github.com/PolarNotion/siderail', class: "btn btn-#{x}"
+      = link_to 'Large', 'https://github.com/PolarNotion/siderail', class: "btn btn-#{x} btn-lg"
+      = link_to 'Outline Large', 'https://github.com/PolarNotion/siderail', class: "btn btn-outline-#{x} btn-lg"
+    
+%section.pad-section
+  .container
+    %h2 Mixed Content Graphic
+    .row
+      .col-sm-6
+        .background-image.border{ style: "background-image: url(https://source.unsplash.com/random/?realestate);"}
+          = image_tag "spacer-landscape.png"
+      .col-sm-6
+        %h2 Primary Section
+        %p= Faker::Lorem.paragraph_by_chars(number: 256)
+
+        = link_to 'View on Github', 'https://github.com/PolarNotion/siderail', class: 'btn btn-primary'
+
+%section.pad-section
+  .container
+    %h2 Fixed Mixed Content Graphic
+    .row
+      .col-sm-6
+        .sticky-top
+          .background-image.border{ style: "background-image: url(https://source.unsplash.com/random/?realestate);"}
+            = image_tag "spacer-landscape.png"
+      .col-sm-6
+        %h2 Primary Section
+        %p= Faker::Lorem.paragraph_by_chars(number: 800)
+        %p= Faker::Lorem.paragraph_by_chars(number: 800)
+
+%section.pad-section
+  .container
+    %h2 Standard Card Grid
+    .row
+      - 6.times do |i|
+        .col-sm-4
+          .card
+            .background-image{ style: "background-image: url(https://source.unsplash.com/random/?people_#{i});"}
+              = image_tag "spacer-landscape.png"
+            .card-header
+              %h3.mb-0 This is a card
+            .card-body
+              This is card content
+
+%section.pad-section
+  .container
+    %h2 Image Card Grid
+    .row
+      - 6.times do |i|
+        .col-sm-4
+          .card
+            .background-image{ style: "background-image: url(https://source.unsplash.com/random/?headshot_#{i});"}
+              = image_tag "spacer-portrait.png"
+            .card-image-content
+              .card-header
+                %h3.mb-0 This is a card
+              .card-body
+                This is card content
+
+%section.pad-section
+  .container
+    %h2 5 Column Layout
+    .row
+      - 5.times do |i|
+        .col-sm-fifth
+          .card
+            .background-image{ style: "background-image: url(https://source.unsplash.com/random/?headshot_#{i});"}
+              = image_tag "spacer-portrait.png"
+            .card-image-content
+              .card-header
+                %h3.mb-0 This is a card
+              .card-body
+                This is card content
+%section.pad-section
+  .container
+    %h2 Tables
+
+    .table-responsive
+      %table.table
+        %thead
+          %tr
+            %th{scope: "col"} #
+            %th{scope: "col"} First
+            %th{scope: "col"} Last
+            %th{scope: "col"} Handle
+        %tbody
+          %tr
+            %th{scope: "row"} 1
+            %td Mark
+            %td Otto
+            %td @mdo
+          %tr.table-primary
+            %th{scope: "row"} 1
+            %td Mark
+            %td Otto
+            %td @mdo
+
+          %tr.table-secondary
+            %th{scope: "row"} 1
+            %td Mark
+            %td Otto
+            %td @mdo
+
+          %tr.table-danger
+            %th{scope: "row"} 1
+            %td Mark
+            %td Otto
+            %td @mdo
+
+          %tr.table-dark
+            %th{scope: "row"} 1
+            %td Mark
+            %td Otto
+            %td @mdo
+
+          %tr.table-light
+            %th{scope: "row"} 1
+            %td Mark
+            %td Otto
+            %td @mdo
+        
+%section
+  .container
+    %h2 Pagination
+    %nav{"aria-label" => "Page navigation example"}
+      %ul.pagination
+        %li.page-item
+          %a.page-link{:href => "#"} Previous
+        %li.page-item
+          %a.page-link{:href => "#"} 1
+        %li.page-item
+          %a.page-link{:href => "#"} 2
+        %li.page-item
+          %a.page-link{:href => "#"} 3
+        %li.page-item
+          %a.page-link{:href => "#"} Next
