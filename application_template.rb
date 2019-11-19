@@ -30,7 +30,7 @@ def lets_go!
   copy_file "ruby-version", ".ruby-version", force: true
   copy_file "Guardfile", "Guardfile"
 
-  # app/ files
+  # app/
   copy_file "app/assets/images/default-profile-photo.png", force: true
   copy_file "app/assets/images/spacer-landscape.png", force: true
   copy_file "app/assets/images/spacer-portrait.png", force: true
@@ -88,27 +88,85 @@ def lets_go!
   copy_file "app/views/users/shared/_links.html.haml", force: true
   copy_file "app/views/users/unlocks/new.html.haml", force: true
 
-  # config/ files
-  # application.rb (generators)
-  # routes
-  # storage.yml
+  # config/
+  copy_file "config/application.rb", force: true
+  copy_file "config/routes.rb", force: true
+  template "config/storage.yml.tt", force: true
 
   # config/environments
-  # development.rb letter opener
-  # production.rb sparkpost
+  environment env: "development" do
+    """
+      config.action_mailer.default_url_options   = { host: 'lvh.me', port: 3000 }
+      config.action_mailer.delivery_method       = :letter_opener
+      config.action_mailer.perform_deliveries    = true
+      config.action_mailer.raise_delivery_errors = true
+    """
+  end
+  environment env: "production" do
+    """
+      config.action_mailer.delivery_method       = :sparkpost
+      config.action_mailer.perform_deliveries    = true
+      config.action_mailer.raise_delivery_errors = false
+      config.action_mailer.perform_caching       = false
+      config.action_mailer.asset_host            = ENV.fetch('DEFAULT_URL')
+      config.action_mailer.default_url_options   = { host: ENV.fetch('DEFAULT_URL') }
+    """
+  end
 
   # config/initializers
-  # ahoy
-  # friend_id
-  # kaminari
-  # meta_tags
-  # simple_form
-  # spark_post
+  initializer "ahoy.rb", <<-AHOY
+    class Ahoy::Store < Ahoy::DatabaseStore
+    end
+
+    # set to true for JavaScript tracking
+    Ahoy.api = false
+
+    # better user agent parsing
+    Ahoy.user_agent_parser = :device_detector
+
+    # better bot detection
+    Ahoy.bot_detection_version = 2
+  AHOY
+
+  copy_file "config/initializers/devise.rb"
+  copy_file "config/initializers/friendly_id.rb"
+
+  initializer "kaminari.rb", <<-KAMINARI
+    # frozen_string_literal: true
+    Kaminari.configure do |config|
+      # config.default_per_page = 25
+      # config.max_per_page = nil
+      # config.window = 4
+      # config.outer_window = 0
+      # config.left = 0
+      # config.right = 0
+      # config.page_method_name = :page
+      # config.param_name = :page
+      # config.params_on_first_page = false
+    end
+  KAMINARI
+
+  copy_file "config/initializers/meta_tags.rb"
+  copy_file "config/initializers/simple_form.rb"
+
+  initializer "sparkpost_rails.rb", <<-SPARKPOST
+    SparkPostRails.configure do |c|
+      c.api_key           = ENV['SPARKPOST_KEY']
+      c.html_content_only = true
+    end
+  SPARKPOST
 
   # config/locales
-  # devise
-  # loaf
-  # simple_form
+  copy_file "config/localels/devise.en.yml"
+  copy_file "config/localels/simple_form.en.yml"
+  file "config/locals/loaf.en.yml", <<-LOAF
+    en:
+    loaf:
+      errors:
+        invalid_options: "Invalid option :%{invalid}. Valid options are: %{valid}, make sure these are the ones you are using."
+      breadcrumbs:
+        home: 'Home'
+  LOAF
 
   # db/
   # seeds.rb
@@ -178,7 +236,7 @@ def assert_valid_options
     next unless options.key?(key)
     actual = options[key]
     unless actual == expected
-      fail Rails::Generators::Error, "Unsupported option: #{key}=#{actual}"
+      fail Rails::Generators::Error, red("Unsupported option to rails new: #{key}=#{actual}")
     end
   end
 end
