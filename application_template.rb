@@ -29,6 +29,8 @@ def lets_go!
   copy_file "gitignore", ".gitignore", force: true
   copy_file "ruby-version", ".ruby-version", force: true
 
+  # Guardfile
+
   # app/ files
   copy_file "app/assets/images/default-profile-photo.png", force: true
   copy_file "app/assets/images/spacer-landscape.png", force: true
@@ -87,6 +89,36 @@ def lets_go!
   copy_file "app/views/users/shared/_links.html.haml", force: true
   copy_file "app/views/users/unlocks/new.html.haml", force: true
 
+  # config/ files
+  # application.rb (generators)
+  # routes
+  # storage.yml
+
+  # config/environments
+  # development.rb letter opener
+  # production.rb sparkpost
+
+  # config/initializers
+  # ahoy
+  # friend_id
+  # kaminari
+  # meta_tags
+  # simple_form
+  # spark_post
+
+  # config/locales
+  # devise
+  # loaf
+  # simple_form
+
+  # db/
+  # seeds.rb
+  # db/migrations
+
+  # lib/
+  # investigate lib/templates/haml/scaffold, does this get used?
+
+  # copy_file spec/*
 end
 
 # Helper methods
