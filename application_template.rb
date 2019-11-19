@@ -28,8 +28,7 @@ def lets_go!
 
   copy_file "gitignore", ".gitignore", force: true
   copy_file "ruby-version", ".ruby-version", force: true
-
-  # Guardfile
+  copy_file "Guardfile", "Guardfile"
 
   # app/ files
   copy_file "app/assets/images/default-profile-photo.png", force: true
