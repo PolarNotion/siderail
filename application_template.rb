@@ -171,7 +171,7 @@ def assert_valid_options
     skip_gemfile: false,
     skip_bundle: false,
     skip_git: false,
-    skip_test: false,
+    skip_test: true,
     edge: false
   }
   valid_options.each do |key, expected|
