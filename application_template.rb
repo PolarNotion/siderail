@@ -230,12 +230,14 @@ def assert_valid_options
   # rails new accepts many options, but our template handles a bunch of stuff
   # automatically so warn if those options are specified differently
   valid_options = {
+    database: 'postgresql',
     skip_gemfile: false,
     skip_bundle: false,
     skip_git: false,
     skip_test: true,
     edge: false
   }
+
   valid_options.each do |key, expected|
     next unless options.key?(key)
     actual = options[key]
