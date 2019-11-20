@@ -173,8 +173,18 @@ def lets_go!
   LOAF
 
   # db/
-  # seeds.rb
-  # db/migrations
+  copy_file "db/seeds.rb", force: true
+  [
+    "db/migrate/20190720175000_create_settings.rb",
+    "db/migrate/20190720152159_devise_create_users.rb",
+    "db/migrate/20190720191740_add_name_and_admin_permission_to_users.rb",
+    "db/migrate/20190720144752_create_friendly_id_slugs.rb",
+    "db/migrate/20190720182124_create_ahoy_visits_and_events.rb",
+    "db/migrate/20190720161737_create_versions.rb",
+    "db/migrate/20190720190557_create_active_storage_tables.active_storage.rb"
+  ].each do |filename|
+    copy_file filename
+  end
 
   # lib/
   # investigate lib/templates/haml/scaffold, does this get used?
