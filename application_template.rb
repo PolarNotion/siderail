@@ -189,7 +189,25 @@ def lets_go!
   # lib/
   # investigate lib/templates/haml/scaffold, does this get used?
 
-  # copy_file spec/*
+  # spec/
+  [
+    "spec/spec_helper.rb",
+    "spec/models/user_spec.rb",
+    "spec/support/helpers.rb",
+    "spec/support/factory_bot.rb",
+    "spec/support/devise.rb",
+    "spec/support/database_cleaner.rb",
+    "spec/support/helpers/session_helpers.rb",
+    "spec/factories/users.rb",
+    "spec/controllers/pages_controller_spec.rb",
+    "spec/controllers/admin/users_controller_spec.rb",
+    "spec/controllers/admin/pages_controller_spec.rb",
+    "spec/controllers/admin/settings_controller_spec.rb",
+    "spec/rails_helper.rb",
+    "spec/helpers/application_helper_spec.rb"
+  ].each do |filename|
+    copy_file filename, force: true
+  end
 
   # set up the database
   rails_command "db:migrate"
