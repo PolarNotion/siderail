@@ -88,6 +88,10 @@ def lets_go!
   copy_file "app/views/users/shared/_links.html.haml", force: true
   copy_file "app/views/users/unlocks/new.html.haml", force: true
 
+  Dir["app/views/**/*.erb"].each do |filename|
+    File.delete(filename)
+  end
+
   # config/
   copy_file "config/application.rb", force: true
   copy_file "config/routes.rb", force: true
