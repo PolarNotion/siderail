@@ -161,8 +161,8 @@ def lets_go!
   SPARKPOST
 
   # config/locales
-  copy_file "config/localels/devise.en.yml"
-  copy_file "config/localels/simple_form.en.yml"
+  copy_file "config/locales/devise.en.yml"
+  copy_file "config/locales/simple_form.en.yml"
   file "config/locals/loaf.en.yml", <<-LOAF
     en:
     loaf:
