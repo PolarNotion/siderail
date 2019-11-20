@@ -180,6 +180,10 @@ def lets_go!
   # investigate lib/templates/haml/scaffold, does this get used?
 
   # copy_file spec/*
+
+  # set up the database
+  rails_command "db:migrate"
+  rails_command "db:setup"
 end
 
 # Helper methods
