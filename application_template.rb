@@ -31,9 +31,11 @@ def lets_go!
   copy_file "Guardfile", "Guardfile"
 
   # app/
+  copy_file "app/assets/config/manifest.js", force: true
   copy_file "app/assets/images/default-profile-photo.png", force: true
   copy_file "app/assets/images/spacer-landscape.png", force: true
   copy_file "app/assets/images/spacer-portrait.png", force: true
+  copy_file "app/assets/javascripts/application.js", force: true
   copy_file "app/assets/javascripts/general.coffee", force: true
   copy_file "app/assets/stylesheets/admin.scss", force: true
   copy_file "app/assets/stylesheets/application.css", force: true
