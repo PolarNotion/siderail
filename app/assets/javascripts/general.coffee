@@ -1,5 +1,7 @@
 document.addEventListener "turbolinks:load", ->
-  
+
+  $('.turntable').turntable();
+
   # Smooth Scroll to Anchor
   $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click (event) ->
     # On-page links

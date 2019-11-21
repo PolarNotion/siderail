@@ -50,6 +50,25 @@ img {
   max-width: 15rem;
 }
 
+.turntable {
+  display: inline-block;
+  margin: 0px;
+}
+.turntable ul {
+  padding: 0px;
+  margin: 0px;
+}
+.turntable ul li {
+  list-style-type: none;
+  display: none;
+}
+.turntable ul li img {
+  width: 100%;
+}
+.turntable ul li.active {
+  display: block;
+}
+
 a:not(.btn) {
   cursor: pointer;
   color: $color_primary;

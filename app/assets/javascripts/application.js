@@ -17,4 +17,5 @@
 //= require bootstrap
 //= require material
 //= require turbolinks
+//= require turntable
 //= require_tree .
