@@ -99,24 +99,21 @@ def lets_go!
   template "config/storage.yml.tt", force: true
 
   # config/environments
-  environment env: "development" do
-    """
-      config.action_mailer.default_url_options   = { host: 'lvh.me', port: 3000 }
-      config.action_mailer.delivery_method       = :letter_opener
-      config.action_mailer.perform_deliveries    = true
-      config.action_mailer.raise_delivery_errors = true
-    """
-  end
-  environment env: "production" do
-    """
-      config.action_mailer.delivery_method       = :sparkpost
-      config.action_mailer.perform_deliveries    = true
-      config.action_mailer.raise_delivery_errors = false
-      config.action_mailer.perform_caching       = false
-      config.action_mailer.asset_host            = ENV.fetch('DEFAULT_URL')
-      config.action_mailer.default_url_options   = { host: ENV.fetch('DEFAULT_URL') }
-    """
-  end
+  environment(<<-DEV, env: "development")
+    config.action_mailer.default_url_options   = { host: 'lvh.me', port: 3000 }
+    config.action_mailer.delivery_method       = :letter_opener
+    config.action_mailer.perform_deliveries    = true
+    config.action_mailer.raise_delivery_errors = true
+  DEV
+
+  environment(<<-PROD, env: "production")
+    config.action_mailer.delivery_method       = :sparkpost
+    config.action_mailer.perform_deliveries    = true
+    config.action_mailer.raise_delivery_errors = false
+    config.action_mailer.perform_caching       = false
+    config.action_mailer.asset_host            = ENV.fetch('DEFAULT_URL')
+    config.action_mailer.default_url_options   = { host: ENV.fetch('DEFAULT_URL') }
+  PROD
 
   # config/initializers
   initializer "ahoy.rb", <<-AHOY
