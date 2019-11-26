@@ -335,15 +335,23 @@ def confirm_optional_libs
 end
 
 def sidekiq?
-  @sidekiq ||= yes?(yellow("Sidekiq?"))
+  ask_once("Sidekiq?")
 end
 
 def redis?
-  @redis ||= sidekiq? || yes?(yellow("Redis?"))
+  sidekiq? || ask_once("Redis?")
 end
 
 def image_uploads?
-  @image_uploads ||= yes?(yellow("Image Uploads?"))
+  ask_once("Image Uploads?")
+end
+
+def ask_once(question)
+  @answers ||= {}
+  question_index = question.to_sym
+
+  @answers[question_index] ||= yes?(yellow(question)) ? "yes" : "no"
+  @answers[question_index] == "yes"
 end
 
 # Terminal color helpers
