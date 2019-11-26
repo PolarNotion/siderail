@@ -95,7 +95,6 @@ def lets_go!
   end
 
   # config/
-  copy_file "config/application.rb", force: true
   copy_file "config/routes.rb", force: true
   template "config/storage.yml.tt", force: true
 
