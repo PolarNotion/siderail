@@ -87,7 +87,7 @@ Let's look at how the "Sidekiq?" question is implemented:
 ```ruby
 def confirm_optional_libs
   puts yellow("Select Options:")
-  sidekiq? # ensure all questions are asked at one in this method
+  sidekiq? # call all question methods at once in this method
   redis?
 end
 
@@ -114,7 +114,7 @@ The steps:
   - e.g. if sidekiq? is yes, redis? is automatically yes
 - call the question method in the `confirm_optional_libs` method
   - put it in order if questions rely on each other:
-    - e.g. ask sidekiq? before asking redis?
+    - e.g. ask sidekiq? _before_ asking redis?
 
 ### Using Answers in Templates
 
@@ -122,7 +122,7 @@ Need to do something dynamically at template-generation-time based on the answer
 
 In code:
 
-```
+```ruby
 if sidekiq?
   # do a thing
 end
@@ -130,7 +130,7 @@ end
 
 In templates (`.tt` files):
 
-```
+```erb
 <%- if sidekiq? %>
 Do sidekiq-specific stuff!
 <% end %>
