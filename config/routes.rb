@@ -14,7 +14,7 @@ Rails.application.routes.draw do
         get :entries
       end
     end
-    
+
     resources :users, only: [ :index ]
   end
 

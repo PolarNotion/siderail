@@ -1,9 +1,9 @@
 puts "Creating Users."
 
 User.create(
-  first_name: "Morgan",
-  last_name: "Lopes",
-  email: "morgan@polarnotion.com",
+  first_name: "Bold",
+  last_name: "Developer",
+  email: "dev@polarnotion.com",
   password: '123123123',
   is_admin: true
 )

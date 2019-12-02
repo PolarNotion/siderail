@@ -1,0 +1,19 @@
+# <%= app_name %>
+
+This is a Rails <%= Rails::VERSION::MAJOR %> app.
+
+## Prerequisites
+
+* Ruby <%= RUBY_VERSION %>
+* Postgres
+<%= "* Redis" if redis? %>
+<%= "* ImageMagick or libvips" if image_uploads? %>
+
+
+## Getting Started
+
+* clone this repo
+* run `bundle install`
+* run `rails db:setup`
+* run `rails server`
+* visit `//localhost:3000` in your browser
