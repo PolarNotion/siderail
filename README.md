@@ -12,6 +12,8 @@ Siderail is an application generator that provides:
 - a [Rails Application Template](https://guides.rubyonrails.org/rails_application_templates.html) that is easy to keep updated
 - always growing and improving with real world usage
 
+> Looking for the old version of Siderail that you just clone directly? [It is tagged, here](https://github.com/PolarNotion/siderail/tree/clone-style).
+
 ## Start Here
 
 Starting a new project? Start with Siderail! It's as easy as:
