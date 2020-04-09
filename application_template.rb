@@ -208,6 +208,7 @@ def lets_go!
   end
 
   # set up the database
+  rails_command "db:create"
   rails_command "db:migrate"
   rails_command "db:setup"
 end
